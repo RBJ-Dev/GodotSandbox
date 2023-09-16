@@ -14,3 +14,12 @@ texture = ExtResource("1_262fj")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 rotation = -1.5708
 polygon = PackedVector2Array(2, -55, 2, -51, 7, -50, 12, -46, 16, -40, 18, -33, 28, -33, 27, -27, 30, -15, 30, 0, 19, 8, 18, 21, 14, 37, 0, 57, -12, 42, -18, 21, -18, 7, -32, 3, -31, -14, -26, -27, -28, -33, -20, -33, -16, -42, -12, -47, -7, -50, -4, -51, -3, -55)
+
+[node name="PortCannonsReload" type="Timer" parent="."]
+one_shot = true
+
+[node name="StarboardCannonsReload" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="PortCannonsReload" to="." method="_on_port_cannons_reload_timeout"]
+[connection signal="timeout" from="StarboardCannonsReload" to="." method="_on_starboard_cannons_reload_timeout"]
