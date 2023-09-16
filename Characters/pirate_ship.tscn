@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dto8ohtu28ncm"]
+
+[ext_resource type="Texture2D" uid="uid://cbtnij85qdk53" path="res://kenney_pirate-pack/PNG/Default size/Ships/ship (2).png" id="1_262fj"]
+[ext_resource type="Script" path="res://Characters/pirate_ship.gd" id="1_j5rgc"]
+
+[node name="PirateShip" type="CharacterBody2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_j5rgc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.5708
+texture = ExtResource("1_262fj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = -1.5708
+polygon = PackedVector2Array(2, -55, 2, -51, 7, -50, 12, -46, 16, -40, 18, -33, 28, -33, 27, -27, 30, -15, 30, 0, 19, 8, 18, 21, 14, 37, 0, 57, -12, 42, -18, 21, -18, 7, -32, 3, -31, -14, -26, -27, -28, -33, -20, -33, -16, -42, -12, -47, -7, -50, -4, -51, -3, -55)

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2rxubpjw30pd"]
+
+[ext_resource type="PackedScene" uid="uid://dto8ohtu28ncm" path="res://Characters/pirate_ship.tscn" id="1_51af7"]
+
+[node name="World" type="Node2D"]
+
+[node name="PirateShip" parent="." instance=ExtResource("1_51af7")]
+position = Vector2(536, 283)
