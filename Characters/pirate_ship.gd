@@ -23,9 +23,9 @@ func _physics_process(delta):
 	move_and_slide()
 
 
-func _on_port_cannon_cannon_fired():
-	cannon_fired.emit()
+func _on_port_cannon_cannon_fired(cannon_position, direction):
+	cannon_fired.emit(cannon_position, direction)
 
 
-func _on_starboard_cannon_cannon_fired():
-	cannon_fired.emit()
+func _on_starboard_cannon_cannon_fired(cannon_position, direction):
+	cannon_fired.emit(cannon_position, direction)

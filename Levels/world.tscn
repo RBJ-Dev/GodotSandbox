@@ -1,16 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2rxubpjw30pd"]
+[gd_scene load_steps=5 format=3 uid="uid://d2rxubpjw30pd"]
 
 [ext_resource type="Script" path="res://Levels/world.gd" id="1_2rum8"]
 [ext_resource type="PackedScene" uid="uid://dto8ohtu28ncm" path="res://Characters/pirate_ship.tscn" id="1_51af7"]
+[ext_resource type="Texture2D" uid="uid://d20iwh3d66quq" path="res://kenney_pirate-pack/PNG/Default size/Tiles/tile_73.png" id="2_im5hk"]
 [ext_resource type="Script" path="res://Levels/ProjectileContainer.gd" id="3_yoxq0"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_2rum8")
 
-[node name="PirateShip" parent="." instance=ExtResource("1_51af7")]
-position = Vector2(536, 283)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(100, 100)
+texture = ExtResource("2_im5hk")
 
 [node name="ProjectileContainer" type="Node2D" parent="."]
 script = ExtResource("3_yoxq0")
+
+[node name="PirateShip" parent="." instance=ExtResource("1_51af7")]
+position = Vector2(536, 283)
 
 [connection signal="cannon_fired" from="PirateShip" to="ProjectileContainer" method="_on_pirate_ship_cannon_fired"]
