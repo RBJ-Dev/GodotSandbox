@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2rxubpjw30pd"]
+[gd_scene load_steps=4 format=3 uid="uid://d2rxubpjw30pd"]
 
 [ext_resource type="Script" path="res://Levels/world.gd" id="1_2rum8"]
 [ext_resource type="PackedScene" uid="uid://dto8ohtu28ncm" path="res://Characters/pirate_ship.tscn" id="1_51af7"]
+[ext_resource type="Script" path="res://Levels/ProjectileContainer.gd" id="3_yoxq0"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_2rum8")
@@ -10,6 +11,6 @@ script = ExtResource("1_2rum8")
 position = Vector2(536, 283)
 
 [node name="ProjectileContainer" type="Node2D" parent="."]
+script = ExtResource("3_yoxq0")
 
-[connection signal="port_cannons_fired" from="PirateShip" to="." method="_on_pirate_ship_port_cannons_fired"]
-[connection signal="starboard_cannons_fired" from="PirateShip" to="." method="_on_pirate_ship_starboard_cannons_fired"]
+[connection signal="cannon_fired" from="PirateShip" to="ProjectileContainer" method="_on_pirate_ship_cannon_fired"]
